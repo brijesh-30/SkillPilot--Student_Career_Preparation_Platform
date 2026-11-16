@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+/* Custom scrollbars and transitions for smooth theme switching */
+html {
+  transition: background-color 0.2s ease, color 0.2s ease;
+  font-family: var(--font-sans);
+}
+
+/* Code font helper */
+.font-mono-code {
+  font-family: var(--font-mono);
+}
