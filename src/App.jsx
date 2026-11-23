@@ -128,16 +128,16 @@ function PageHeading({ title, description, icon: Icon }) {
   return (
     <div className="mb-6 flex items-start gap-3.5">
       {Icon && (
-        <div className="rounded-2xl bg-indigo-50 p-3 text-indigo-600 ring-1 ring-indigo-100">
+        <div className="rounded-2xl bg-indigo-50 p-3 text-indigo-600 ring-1 ring-indigo-100 dark:bg-indigo-950/70 dark:text-indigo-400 dark:ring-indigo-900/60">
           <Icon size={22} />
         </div>
       )}
 
       <div>
-        <h1 className="text-xl font-bold tracking-tight text-slate-900 sm:text-2xl">
+        <h1 className="text-xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-2xl">
           {title}
         </h1>
-        <p className="mt-0.5 text-xs text-slate-500 sm:text-sm">{description}</p>
+        <p className="mt-0.5 text-xs text-slate-500 dark:text-slate-400 sm:text-sm">{description}</p>
       </div>
     </div>
   );

@@ -661,13 +661,13 @@ export default function CareerRoadmap({ selectedSearchResult }) {
       </div>
 
       {/* Stage list and customization */}
-      <div className="rounded-3xl border border-slate-200/90 bg-white p-5 shadow-xs sm:p-7">
+      <div className="rounded-3xl border border-slate-200/90 bg-white p-5 shadow-xs sm:p-7 dark:border-slate-800/80 dark:bg-[#0f172a] transition-colors">
         <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <h3 className="text-lg font-bold text-slate-900">
+            <h3 className="text-lg font-bold text-slate-900 dark:text-white">
               Your learning journey
             </h3>
-            <p className="mt-1 text-sm text-slate-500">
+            <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
               Select skills as you learn them. Your progress saves
               automatically.
             </p>
@@ -683,7 +683,7 @@ export default function CareerRoadmap({ selectedSearchResult }) {
                 }
               }}
               aria-label="Switch career curriculum track"
-              className="rounded-xl border border-slate-200 bg-white px-3 py-2 text-xs font-semibold text-slate-700 outline-none hover:border-slate-300 focus:border-indigo-500"
+              className="rounded-xl border border-slate-200 bg-white px-3 py-2 text-xs font-semibold text-slate-700 outline-none hover:border-slate-300 focus:border-indigo-500 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 dark:hover:border-slate-600"
             >
               <option value="" disabled>
                 Switch Track ▾
@@ -712,7 +712,7 @@ export default function CareerRoadmap({ selectedSearchResult }) {
 
         {addingStage && (
           <form
-            className="mb-5 flex flex-col gap-2 rounded-xl border border-violet-200 bg-violet-50/50 p-4 sm:flex-row"
+            className="mb-5 flex flex-col gap-2 rounded-xl border border-violet-200 bg-violet-50/50 p-4 sm:flex-row dark:border-violet-900/50 dark:bg-violet-950/30"
             onSubmit={(event) => {
               event.preventDefault();
               addStage();
@@ -724,7 +724,7 @@ export default function CareerRoadmap({ selectedSearchResult }) {
               onChange={(event) => setNewStageTitle(event.target.value)}
               placeholder="Enter stage name"
               aria-label="New stage name"
-              className="min-w-0 flex-1 rounded-lg border border-slate-200 bg-white px-3 py-2.5 text-sm outline-none focus:border-violet-400 focus:ring-2 focus:ring-violet-100"
+              className="min-w-0 flex-1 rounded-lg border border-slate-200 bg-white px-3 py-2.5 text-sm outline-none focus:border-violet-400 focus:ring-2 focus:ring-violet-100 dark:border-slate-700 dark:bg-slate-900 dark:text-white dark:focus:ring-violet-900/40"
             />
             <button
               type="submit"
@@ -860,7 +860,7 @@ export default function CareerRoadmap({ selectedSearchResult }) {
                       aria-label={
                         isExpanded ? "Collapse stage" : "Expand stage"
                       }
-                      className="rounded-lg p-2 text-slate-400 hover:bg-violet-50 hover:text-violet-700"
+                      className="rounded-lg p-2 text-slate-400 hover:bg-violet-50 hover:text-violet-700 dark:hover:bg-slate-800 dark:hover:text-violet-300"
                     >
                       {isExpanded ? (
                         <ChevronUp size={18} />
@@ -872,7 +872,7 @@ export default function CareerRoadmap({ selectedSearchResult }) {
                 </div>
 
                 {isExpanded && (
-                  <div className="border-t border-violet-100 px-4 pb-5 pt-4 sm:px-5">
+                  <div className="border-t border-violet-100 dark:border-slate-800/80 px-4 pb-5 pt-4 sm:px-5">
                     {editingStage === stage.id ? (
                       <form
                         className="space-y-3"
@@ -889,7 +889,7 @@ export default function CareerRoadmap({ selectedSearchResult }) {
                         ].map(([key, label]) => (
                           <label
                             key={key}
-                            className="block text-xs font-semibold text-slate-600"
+                            className="block text-xs font-semibold text-slate-600 dark:text-slate-300"
                           >
                             {label}
                             <input
@@ -900,7 +900,7 @@ export default function CareerRoadmap({ selectedSearchResult }) {
                                   [key]: event.target.value,
                                 }))
                               }
-                              className="mt-1 w-full rounded-lg border border-slate-200 bg-white px-3 py-2.5 text-sm font-normal outline-none focus:border-violet-400 focus:ring-2 focus:ring-violet-100"
+                              className="mt-1 w-full rounded-lg border border-slate-200 bg-white px-3 py-2.5 text-sm font-normal outline-none focus:border-violet-400 focus:ring-2 focus:ring-violet-100 dark:border-slate-700 dark:bg-slate-900 dark:text-white dark:focus:ring-violet-900/40"
                             />
                           </label>
                         ))}
@@ -924,10 +924,10 @@ export default function CareerRoadmap({ selectedSearchResult }) {
                       <>
                         <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
                           <div>
-                            <p className="text-sm leading-6 text-slate-600">
+                            <p className="text-sm leading-6 text-slate-600 dark:text-slate-300">
                               {stage.description}
                             </p>
-                            <div className="mt-3 flex items-center gap-2 text-xs font-medium text-slate-500">
+                            <div className="mt-3 flex items-center gap-2 text-xs font-medium text-slate-500 dark:text-slate-400">
                               <Clock size={14} />
                               Suggested duration: {stage.duration}
                             </div>
@@ -954,12 +954,12 @@ export default function CareerRoadmap({ selectedSearchResult }) {
                             <div className="flex items-center gap-2">
                               <Layers
                                 size={16}
-                                className="text-violet-600"
+                                className="text-violet-600 dark:text-violet-400"
                               />
-                              <h5 className="text-sm font-bold text-slate-800">
+                              <h5 className="text-sm font-bold text-slate-800 dark:text-white">
                                 Skills & technologies
                               </h5>
-                              <span className="rounded-full bg-violet-50 px-2 py-0.5 text-xs font-semibold text-violet-700">
+                              <span className="rounded-full bg-violet-50 px-2 py-0.5 text-xs font-semibold text-violet-700 dark:bg-violet-950/70 dark:text-violet-300">
                                 {stageProgress.completed}/{stageProgress.total}
                               </span>
                             </div>
@@ -993,7 +993,7 @@ export default function CareerRoadmap({ selectedSearchResult }) {
                                 }
                                 placeholder="e.g. TanStack Query"
                                 aria-label="New skill name"
-                                className="min-w-0 flex-1 rounded-lg border border-slate-200 bg-white px-3 py-2.5 text-sm outline-none focus:border-violet-400 focus:ring-2 focus:ring-violet-100"
+                                className="min-w-0 flex-1 rounded-lg border border-slate-200 bg-white px-3 py-2.5 text-sm outline-none focus:border-violet-400 focus:ring-2 focus:ring-violet-100 dark:border-slate-700 dark:bg-slate-900 dark:text-white dark:focus:ring-violet-900/40"
                               />
                               <button
                                 type="submit"
@@ -1010,15 +1010,15 @@ export default function CareerRoadmap({ selectedSearchResult }) {
                           )}
 
                           {(stage.skills || []).length === 0 ? (
-                            <div className="rounded-xl border border-dashed border-slate-300 bg-white p-6 text-center">
+                            <div className="rounded-xl border border-dashed border-slate-300 bg-white p-6 text-center dark:border-slate-800 dark:bg-slate-900/40">
                               <Layers
                                 size={24}
-                                className="mx-auto text-slate-400"
+                                className="mx-auto text-slate-400 dark:text-slate-500"
                               />
-                              <p className="mt-2 text-sm font-semibold text-slate-700">
+                              <p className="mt-2 text-sm font-semibold text-slate-700 dark:text-slate-200">
                                 No skills added yet
                               </p>
-                              <p className="mt-1 text-xs text-slate-500">
+                              <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
                                 Add technologies or skills for this stage.
                               </p>
                             </div>
@@ -1041,8 +1041,8 @@ export default function CareerRoadmap({ selectedSearchResult }) {
                                       isHighlighted
                                         ? "border-violet-500 bg-violet-100 ring-2 ring-violet-300 shadow-md dark:border-violet-400 dark:bg-violet-950/70 dark:ring-violet-700"
                                         : skill.completed
-                                          ? "border-emerald-200 bg-emerald-50/60 dark:border-emerald-900/50 dark:bg-emerald-950/20"
-                                          : "border-slate-200 bg-white hover:border-violet-200 dark:border-slate-800 dark:bg-slate-800/40 dark:hover:border-slate-700"
+                                          ? "border-emerald-200 bg-emerald-50/60 dark:border-emerald-900/50 dark:bg-emerald-950/30"
+                                          : "border-slate-200 bg-white hover:border-violet-200 dark:border-slate-800 dark:bg-slate-900/60 dark:hover:border-slate-700"
                                     }`}
                                   >
                                     <input
@@ -1052,7 +1052,7 @@ export default function CareerRoadmap({ selectedSearchResult }) {
                                         toggleSkill(stage.id, skill.id)
                                       }
                                       aria-label={`Mark ${skill.name} as learned`}
-                                      className="mt-1 h-4 w-4 shrink-0 accent-violet-600"
+                                      className="mt-1 h-4 w-4 shrink-0 accent-violet-600 rounded"
                                     />
 
                                     <div className="min-w-0 flex-1">
@@ -1070,12 +1070,12 @@ export default function CareerRoadmap({ selectedSearchResult }) {
                                               setSkillDraft(event.target.value)
                                             }
                                             aria-label="Edit skill name"
-                                            className="w-full rounded-md border border-violet-300 px-2 py-1 text-sm outline-none focus:ring-2 focus:ring-violet-100"
+                                            className="w-full rounded-md border border-violet-300 px-2 py-1 text-sm outline-none focus:ring-2 focus:ring-violet-100 dark:border-violet-700 dark:bg-slate-900 dark:text-white"
                                           />
                                           <div className="mt-2 flex gap-2">
                                             <button
                                               type="submit"
-                                              className="text-xs font-semibold text-violet-700 hover:text-violet-900"
+                                              className="text-xs font-semibold text-violet-700 hover:text-violet-900 dark:text-violet-300 dark:hover:text-violet-200"
                                             >
                                               Save
                                             </button>
@@ -1084,7 +1084,7 @@ export default function CareerRoadmap({ selectedSearchResult }) {
                                               onClick={() =>
                                                 setEditingSkill(null)
                                               }
-                                              className="text-xs text-slate-500 hover:text-slate-800"
+                                              className="text-xs text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-200"
                                             >
                                               Cancel
                                             </button>
@@ -1095,8 +1095,8 @@ export default function CareerRoadmap({ selectedSearchResult }) {
                                           <p
                                             className={`wrap-break-word text-sm font-semibold ${
                                               skill.completed
-                                                ? "text-emerald-800"
-                                                : "text-slate-700"
+                                                ? "text-emerald-800 dark:text-emerald-300"
+                                                : "text-slate-800 dark:text-slate-100"
                                             }`}
                                           >
                                             {skill.name}
@@ -1104,17 +1104,17 @@ export default function CareerRoadmap({ selectedSearchResult }) {
                                           <p
                                             className={`mt-1 text-[11px] font-medium ${
                                               skill.completed
-                                                ? "text-emerald-700"
+                                                ? "text-emerald-700 dark:text-emerald-400"
                                                 : skillStatus ===
                                                     "Currently learning"
-                                                  ? "text-blue-700"
-                                                  : "text-slate-500"
+                                                  ? "text-indigo-600 dark:text-indigo-400"
+                                                  : "text-slate-500 dark:text-slate-400"
                                             }`}
                                           >
                                             {skillStatus}
                                           </p>
                                           {isHighlighted && (
-                                            <p className="mt-2 text-[11px] font-bold text-violet-700">
+                                            <p className="mt-2 text-[11px] font-bold text-violet-700 dark:text-violet-300">
                                               <Target
                                                 size={12}
                                                 className="mr-1 inline"
@@ -1149,7 +1149,7 @@ export default function CareerRoadmap({ selectedSearchResult }) {
                                               ),
                                             )
                                           }
-                                          className="rounded p-1 text-slate-400 hover:bg-violet-100 hover:text-violet-700 disabled:opacity-30"
+                                          className="rounded p-1 text-slate-400 hover:bg-violet-100 hover:text-violet-700 disabled:opacity-30 dark:hover:bg-slate-800 dark:hover:text-violet-300"
                                         >
                                           <ArrowUp size={13} />
                                         </button>
@@ -1176,7 +1176,7 @@ export default function CareerRoadmap({ selectedSearchResult }) {
                                               ),
                                             )
                                           }
-                                          className="rounded p-1 text-slate-400 hover:bg-violet-100 hover:text-violet-700 disabled:opacity-30"
+                                          className="rounded p-1 text-slate-400 hover:bg-violet-100 hover:text-violet-700 disabled:opacity-30 dark:hover:bg-slate-800 dark:hover:text-violet-300"
                                         >
                                           <ArrowDown size={13} />
                                         </button>
@@ -1188,7 +1188,7 @@ export default function CareerRoadmap({ selectedSearchResult }) {
                                             setEditingSkill(skill.id);
                                             setSkillDraft(skill.name);
                                           }}
-                                          className="rounded p-1 text-slate-400 hover:bg-violet-100 hover:text-violet-700"
+                                          className="rounded p-1 text-slate-400 hover:bg-violet-100 hover:text-violet-700 dark:hover:bg-slate-800 dark:hover:text-violet-300"
                                         >
                                           <Pencil size={13} />
                                         </button>
@@ -1205,7 +1205,7 @@ export default function CareerRoadmap({ selectedSearchResult }) {
                                               deleteSkill(stage.id, skill.id);
                                             }
                                           }}
-                                          className="rounded p-1 text-slate-400 hover:bg-rose-50 hover:text-rose-600"
+                                          className="rounded p-1 text-slate-400 hover:bg-rose-50 hover:text-rose-600 dark:hover:bg-rose-950/40 dark:hover:text-rose-400"
                                         >
                                           <Trash2 size={13} />
                                         </button>
@@ -1226,27 +1226,27 @@ export default function CareerRoadmap({ selectedSearchResult }) {
           })}
 
           {stages.length === 0 && (
-            <div className="rounded-xl border border-dashed border-slate-300 p-10 text-center">
-              <Layers size={30} className="mx-auto text-violet-400" />
-              <h4 className="mt-3 font-bold text-slate-800">
+            <div className="rounded-xl border border-dashed border-slate-300 p-10 text-center dark:border-slate-800 dark:bg-slate-900/40">
+              <Layers size={30} className="mx-auto text-violet-400 dark:text-violet-500" />
+              <h4 className="mt-3 font-bold text-slate-800 dark:text-white">
                 Start your learning journey
               </h4>
-              <p className="mt-1 text-sm text-slate-500">
+              <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
                 Add your first stage to create a personalized roadmap.
               </p>
             </div>
           )}
         </div>
 
-        <div className="mt-6 flex items-start gap-3 rounded-xl border border-amber-100 bg-linear-to-r from-amber-50 to-orange-50 p-4">
-          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-amber-100 text-amber-700">
+        <div className="mt-6 flex items-start gap-3 rounded-xl border border-amber-100 bg-linear-to-r from-amber-50 to-orange-50 p-4 dark:border-amber-900/40 dark:from-amber-950/30 dark:to-orange-950/20">
+          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-amber-100 text-amber-700 dark:bg-amber-950/60 dark:text-amber-300">
             <Sparkles size={18} />
           </div>
           <div>
-            <p className="text-sm font-bold text-slate-800">
+            <p className="text-sm font-bold text-slate-800 dark:text-white">
               Consistency beats perfection.
             </p>
-            <p className="mt-1 text-xs leading-5 text-slate-600">
+            <p className="mt-1 text-xs leading-5 text-slate-600 dark:text-slate-300">
               Mark a skill complete when you feel confident using it. Your
               roadmap is customizable, and your progress is saved automatically
               in this browser.
