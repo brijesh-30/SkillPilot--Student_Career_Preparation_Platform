@@ -60,7 +60,10 @@ export default function AddApplicationForm({ onAdd, onClose }) {
               Company Name
             </label>
             <div className="flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2.5 focus-within:border-indigo-500 focus-within:ring-2 focus-within:ring-indigo-100 dark:border-slate-700 dark:bg-slate-800/60">
-              <Building2 size={16} className="text-slate-400 dark:text-slate-500" />
+              <Building2
+                size={16}
+                className="text-slate-400 dark:text-slate-500"
+              />
               <input
                 required
                 autoFocus
@@ -77,7 +80,10 @@ export default function AddApplicationForm({ onAdd, onClose }) {
               Role / Position
             </label>
             <div className="flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2.5 focus-within:border-indigo-500 focus-within:ring-2 focus-within:ring-indigo-100 dark:border-slate-700 dark:bg-slate-800/60">
-              <Briefcase size={16} className="text-slate-400 dark:text-slate-500" />
+              <Briefcase
+                size={16}
+                className="text-slate-400 dark:text-slate-500"
+              />
               <input
                 required
                 value={role}
@@ -90,10 +96,16 @@ export default function AddApplicationForm({ onAdd, onClose }) {
 
           <div>
             <label className="mb-1 block text-xs font-bold text-slate-700 dark:text-slate-300">
-              Location <span className="font-normal text-slate-400 dark:text-slate-500">(Optional)</span>
+              Location{" "}
+              <span className="font-normal text-slate-400 dark:text-slate-500">
+                (Optional)
+              </span>
             </label>
             <div className="flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2.5 focus-within:border-indigo-500 focus-within:ring-2 focus-within:ring-indigo-100 dark:border-slate-700 dark:bg-slate-800/60">
-              <MapPin size={16} className="text-slate-400 dark:text-slate-500" />
+              <MapPin
+                size={16}
+                className="text-slate-400 dark:text-slate-500"
+              />
               <input
                 value={location}
                 onChange={(event) => setLocation(event.target.value)}
@@ -109,7 +121,10 @@ export default function AddApplicationForm({ onAdd, onClose }) {
                 Application Date
               </label>
               <div className="flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2.5 focus-within:border-indigo-500 dark:border-slate-700 dark:bg-slate-800/60">
-                <Calendar size={16} className="text-slate-400 dark:text-slate-500" />
+                <Calendar
+                  size={16}
+                  className="text-slate-400 dark:text-slate-500"
+                />
                 <input
                   required
                   type="date"
